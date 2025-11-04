@@ -4,7 +4,6 @@
 
 import getData from "@/lib/getData";
 import {Entry, Lexeme, Sense} from "@/types/Types";
-import { Link } from "react-router-dom";
 
 export default async function Home() {
     const data = await getData();
