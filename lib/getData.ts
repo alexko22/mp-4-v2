@@ -1,5 +1,5 @@
 // Alex Olson | alexko@bu.edu | MP-4
-// getData.ts (makes the API call to retrieve data)
+// lib/getData.ts (makes the API call to retrieve data)
 // followed closely from the professor's class demo...
 
 // retrieving the API key from the hidden .env file like in demo...
@@ -27,10 +27,10 @@ export default async function getData() {
                 },
             }
         );
-        // wait for the call to complete...
+        // waiting for the call to complete...
         const data = await res.json();
         // some words have multiple entries in the dictionary, so I had to push each individually to avoid errors
-        // we have used this ... to flatten entries before, but I had to consult documentation
+        // we have used this ... to flatten entries before, but I had to consult documentation again...
         word_list.push(...data.entries);
 
     }

@@ -1,13 +1,18 @@
 // Alex Olson | alexko@bu.edu | MP-4
-// app/page.tsx (makes the API call to retrieve data)
-// main page adapted closely from the professor's class demo...
+// app/page.tsx (content for the default landing page)
+// main page adapted closely from the professor's class demo and later assistance...
 
+// imports
 import getData from "@/lib/getData";
 import {Entry, Lexeme, Sense} from "@/types/Types";
 
+// main home function that calls the getData() function
+// async as to await getData()'s completion...
+// mapping in a way similar to the Book example in lecture, adjusted for my API...
 export default async function Home() {
     const data = await getData();
 
+    // often referenced the provided webstorm documentation for tailwind syntax options...
     return (
         <div className="flex w-3/4 m-auto flex-col align-items-center bg-amber-100">
             <header className="bg-gray-900 p-5 text-center">
@@ -30,7 +35,6 @@ export default async function Home() {
                                                 lex.senses.map((sense: Sense, k: number) =>
                                                     (
                                                         <div className="flex flex-col align-items-center bg-amber-100" key={k}>
-
                                                             <p className="text-black"> {sense.definition} </p>
                                                         </div>
                                                     )
