@@ -5,7 +5,7 @@
 
 // styling working here but not in the other page
 
-
+"use client";
 import styled from 'styled-components';
 
 const StyledDiv = styled.div`
